@@ -5,21 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>陳氏薇 (Trần Thị Vi)</title>
 
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --bg-gray: #f3f2ef;
             --border-color: #e0e0e0;
+            --primary-color: #0a66c2;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
-            font-family: "Segoe UI", system-ui;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             background-color: var(--bg-gray);
+            color: #333;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
         }
 
         .container {
             max-width: 1100px;
             margin: 20px auto;
+            padding: 0 15px;
         }
 
         .card {
@@ -28,49 +43,57 @@
             border: 1px solid var(--border-color);
             margin-bottom: 20px;
             overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
 
-        /* ✅ Banner đẹp + fix cache */
+        /* Banner */
         .header-banner {
             height: 220px;
             background-image: url("images/OIP.jpg");
             background-size: cover;
             background-position: center 30%;
             background-repeat: no-repeat;
+            transition: transform 0.3s ease;
+        }
+
+        .header-banner:hover {
+            transform: scale(1.02);
         }
 
         .profile-section {
             padding: 0 24px 24px;
+            text-align: center;
+            position: relative;
         }
 
         .photo-container {
             width: 150px;
             height: 150px;
-            margin-top: -75px;
+            margin: -75px auto 10px;
         }
 
-        /* ✅ Avatar đẹp */
         .profile-photo {
             width: 100%;
             height: 100%;
             border-radius: 50%;
             border: 5px solid white;
             object-fit: cover;
-            transition: 0.3s;
+            transition: transform 0.3s ease;
         }
 
-        /* ✨ Hover nhẹ cho xịn */
         .profile-photo:hover {
             transform: scale(1.05);
         }
 
         h1 {
             margin: 10px 0 5px;
+            font-weight: 700;
         }
 
         .headline {
             font-size: 16px;
             margin-bottom: 5px;
+            color: #555;
         }
 
         .contact-info {
@@ -83,18 +106,56 @@
         }
 
         .tags span {
+            background-color: #f0f0f0;
             border: 1px solid gray;
             padding: 5px 12px;
             border-radius: 15px;
             margin-right: 5px;
+            display: inline-block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .tags span:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+            transform: scale(1.05);
+            cursor: default;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-banner {
+                height: 180px;
+            }
+            .photo-container {
+                width: 120px;
+                height: 120px;
+                margin-top: -60px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-banner {
+                height: 150px;
+            }
+            .photo-container {
+                width: 100px;
+                height: 100px;
+                margin-top: -50px;
+            }
+            .section {
+                padding: 15px;
+            }
         }
     </style>
 </head>
-
 <body>
 
 <div class="container">
 
+    <!-- Header Card -->
     <div class="card">
         <div class="header-banner"></div>
 
@@ -106,11 +167,14 @@
             <h1>陳氏薇 (Trần Thị Vi)</h1>
             <div class="headline">數位多媒體設計學生</div>
             <div class="contact-info">
-                新北市 • tranthivi220909@gmail.com • 0970126327
+                新北市 • 
+                <a href="mailto:tranthivi220909@gmail.com">tranthivi220909@gmail.com</a> • 
+                <a href="tel:0970126327">0970126327</a>
             </div>
         </div>
     </div>
 
+    <!-- About Me -->
     <div class="card section">
         <h2>關於我</h2>
         <p>
@@ -119,12 +183,15 @@
         </p>
     </div>
 
+    <!-- Skills -->
     <div class="card section">
         <h2>技能</h2>
         <div class="tags">
             <span>Photoshop</span>
             <span>Illustrator</span>
             <span>Video Editing</span>
+            <span>After Effects</span>
+            <span>Figma</span>
         </div>
     </div>
 
