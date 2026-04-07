@@ -7,11 +7,8 @@
 
     <style>
         :root {
-            --linkedin-blue: #0a66c2;
             --bg-gray: #f3f2ef;
             --border-color: #e0e0e0;
-            --text-main: #1d1d1d;
-            --text-sub: rgba(0,0,0,0.6);
         }
 
         body {
@@ -33,12 +30,12 @@
             overflow: hidden;
         }
 
-        /* ✅ Banner fix */
+        /* ✅ Banner đẹp + fix cache */
         .header-banner {
-            height: 200px;
-            background-image: url("images/OIP.jpg");
+            height: 220px;
+            background-image: url("images/OIP.jpg?v=3");
             background-size: cover;
-            background-position: center;
+            background-position: center 30%;
             background-repeat: no-repeat;
         }
 
@@ -52,12 +49,19 @@
             margin-top: -75px;
         }
 
+        /* ✅ Avatar đẹp */
         .profile-photo {
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            border: 4px solid white;
+            border: 5px solid white;
             object-fit: cover;
+            transition: 0.3s;
+        }
+
+        /* ✨ Hover nhẹ cho xịn */
+        .profile-photo:hover {
+            transform: scale(1.05);
         }
 
         h1 {
@@ -96,7 +100,7 @@
 
         <div class="profile-section">
             <div class="photo-container">
-                <img src="images/123.jpg" class="profile-photo">
+                <img src="images/123.jpg?v=3" class="profile-photo" alt="Profile">
             </div>
 
             <h1>陳氏薇 (Trần Thị Vi)</h1>
@@ -109,7 +113,10 @@
 
     <div class="card section">
         <h2>關於我</h2>
-        <p>目前就讀於黎明技術學院數位多媒體系，對設計充滿熱情。</p>
+        <p>
+            目前就讀於黎明技術學院數位多媒體系，對數位設計與創作充滿熱情，
+            持續學習並提升自己的技能。
+        </p>
     </div>
 
     <div class="card section">
