@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>陳氏薇 (Trần Thị Vi) - 專業個人主頁</title>
+
     <style>
         :root {
             --linkedin-blue: #0a66c2;
@@ -16,10 +17,7 @@
         body {
             font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
             margin: 0;
-            padding: 0;
             background-color: var(--bg-gray);
-            color: var(--text-main);
-            line-height: 1.6;
         }
 
         .container {
@@ -28,7 +26,6 @@
             padding: 0 15px;
         }
 
-        /* --- Profile Header --- */
         .card {
             background: #fff;
             border-radius: 10px;
@@ -44,7 +41,6 @@
 
         .profile-section {
             padding: 0 24px 24px;
-            position: relative;
         }
 
         .photo-container {
@@ -70,64 +66,23 @@
 
         .headline {
             font-size: 18px;
-            color: var(--text-main);
             margin: 5px 0;
         }
 
         .contact-info {
             font-size: 14px;
             color: var(--text-sub);
-            margin-top: 10px;
         }
 
-        .contact-info a {
-            color: var(--linkedin-blue);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        /* --- Content Sections --- */
         .section-padding {
             padding: 24px;
         }
 
         .section-title {
             font-size: 20px;
-            font-weight: 600;
             margin-bottom: 16px;
-            display: flex;
-            align-items: center;
         }
 
-        .item {
-            display: flex;
-            margin-bottom: 15px;
-        }
-
-        .item-icon {
-            width: 48px;
-            height: 48px;
-            background: #f0f0f0;
-            margin-right: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: #666;
-        }
-
-        .item-content h3 {
-            font-size: 16px;
-            margin: 0;
-        }
-
-        .item-content p {
-            font-size: 14px;
-            margin: 2px 0;
-            color: var(--text-sub);
-        }
-
-        /* --- Skills & Languages --- */
         .tags {
             display: flex;
             flex-wrap: wrap;
@@ -135,100 +90,56 @@
         }
 
         .tag {
-            background: #fff;
             border: 1px solid #666;
-            color: #666;
             padding: 5px 15px;
             border-radius: 15px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .badge-toclf {
-            display: inline-block;
-            background-color: #e7f3ff;
-            color: #0073b1;
-            padding: 4px 12px;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 13px;
-            margin-top: 5px;
-        }
-
-        @media (max-width: 768px) {
-            .photo-container { width: 120px; height: 120px; margin-top: -60px; }
-            .header-banner { height: 120px; }
         }
     </style>
 </head>
+
 <body>
 
-    <div class="container">
-        <div class="card">
-            <div class="header-banner"></div>
-            <div class="profile-section">
-                <div class="photo-container">
-                    <img src="images/123.jpg">
-                </div>
-                <div class="info">
-                    <h1>陳氏薇 (Trần Thị Vi)</h1>
-                    <p class="headline">數位多媒體設計學生 | 致力於視覺傳達與數位創作</p>
-                    <p class="contact-info">
-                        新北市, 台灣 • 
-                        <a href="mailto:tranthivi220909@gmail.com">tranthivi220909@gmail.com</a> • 
-                        <span>0970126327</span>
-                    </p>
-                </div>
-            </div>
-        </div>
+<div class="container">
 
-        <div class="card section-padding">
-            <h2 class="section-title">關於我</h2>
-            <p>
-                目前就讀於黎明技術學院數位多媒體系，對數位藝術與多媒體內容創作充滿熱情。
-                具備良好的跨語言溝通能力，已取得 TOCFL B1 認證，能流暢地在中文環境中學習與協作。
-                我致力於將創意轉化為具備影響力的視覺作品，並不斷精進多媒體技術。
-            </p>
-        </div>
+    <div class="card">
+        <div class="header-banner"></div>
 
-        <div class="card section-padding">
-            <h2 class="section-title">教育背景</h2>
-            <div class="item">
-                <div class="item-icon">LIT</div>
-                <div class="item-content">
-                    <h3>黎明技術學院 (Lee-Ming Institute of Technology)</h3>
-                    <p>數位多媒體系</p>
-                    <p>2023年 - 至今</p>
-                </div>
-            </div>
-        </div>
+        <div class="profile-section">
 
-        <div class="card section-padding">
-            <h2 class="section-title">語言能力</h2>
-            <div class="item-content">
-                <h3>中文 (Mandarin Chinese)</h3>
-                <div class="badge-toclf">華語文能力測驗 (TOCFL) - B1 進階級</div>
-                <p style="margin-top: 10px;">具備在日常及職場環境中進行有效溝通的能力。</p>
+            <div class="photo-container">
+                <!-- ✅ FIX Ở ĐÂY -->
+                <img src="./images/123.jpg" alt="Profile" class="profile-photo">
             </div>
-            <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
-            <div class="item-content">
-                <h3>越南語 (Vietnamese)</h3>
-                <p>母語水平</p>
-            </div>
-        </div>
 
-        <div class="card section-padding">
-            <h2 class="section-title">專業技能</h2>
-            <div class="tags">
-                <span class="tag">數位多媒體設計</span>
-                <span class="tag">影像處理 (Photoshop)</span>
-                <span class="tag">平面設計 (Illustrator)</span>
-                <span class="tag">影片剪輯</span>
-                <span class="tag">2D/3D 動畫基礎</span>
-                <span class="tag">跨文化溝通</span>
+            <div class="info">
+                <h1>陳氏薇 (Trần Thị Vi)</h1>
+                <p class="headline">數位多媒體設計學生 | 致力於視覺傳達與數位創作</p>
+                <p class="contact-info">
+                    新北市, 台灣 • tranthivi220909@gmail.com • 0970126327
+                </p>
             </div>
+
         </div>
     </div>
+
+    <div class="card section-padding">
+        <h2 class="section-title">關於我</h2>
+        <p>
+            目前就讀於黎明技術學院數位多媒體系，對數位藝術與多媒體內容創作充滿熱情。
+            已取得 TOCFL B1，能流暢在中文環境中溝通與學習。
+        </p>
+    </div>
+
+    <div class="card section-padding">
+        <h2 class="section-title">專業技能</h2>
+        <div class="tags">
+            <span class="tag">Photoshop</span>
+            <span class="tag">Illustrator</span>
+            <span class="tag">Video Editing</span>
+        </div>
+    </div>
+
+</div>
 
 </body>
 </html>
