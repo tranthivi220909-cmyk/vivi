@@ -46,37 +46,36 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
 
-        /* Banner */
+        /* Banner với avatar + text bên trái */
         .header-banner {
             height: 220px;
             background-image: url("images/OIP.jpg");
             background-size: cover;
             background-position: center 30%;
             background-repeat: no-repeat;
-            transition: transform 0.3s ease;
-        }
-
-        .header-banner:hover {
-            transform: scale(1.02);
-        }
-
-        .profile-section {
-            padding: 0 24px 24px;
-            text-align: center;
             position: relative;
         }
 
+        .profile-left {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            left: 24px;
+            bottom: 20px;
+        }
+
         .photo-container {
-            width: 150px;
-            height: 150px;
-            margin: -75px auto 10px;
+            width: 120px;
+            height: 120px;
+            margin-right: 15px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid white;
         }
 
         .profile-photo {
             width: 100%;
             height: 100%;
-            border-radius: 50%;
-            border: 5px solid white;
             object-fit: cover;
             transition: transform 0.3s ease;
         }
@@ -85,20 +84,26 @@
             transform: scale(1.05);
         }
 
-        h1 {
-            margin: 10px 0 5px;
+        .profile-text h1 {
+            margin: 0;
+            color: #fff;
             font-weight: 700;
         }
 
-        .headline {
+        .profile-text .headline {
             font-size: 16px;
-            margin-bottom: 5px;
-            color: #555;
+            color: #eee;
+            margin-top: 4px;
+        }
+
+        .profile-section {
+            padding: 15px 24px 24px;
         }
 
         .contact-info {
             font-size: 14px;
             color: gray;
+            text-align: left;
         }
 
         .section {
@@ -130,9 +135,8 @@
                 height: 180px;
             }
             .photo-container {
-                width: 120px;
-                height: 120px;
-                margin-top: -60px;
+                width: 100px;
+                height: 100px;
             }
         }
 
@@ -140,13 +144,28 @@
             .header-banner {
                 height: 150px;
             }
+            .profile-left {
+                flex-direction: column;
+                align-items: flex-start;
+                bottom: 10px;
+            }
             .photo-container {
-                width: 100px;
-                height: 100px;
-                margin-top: -50px;
+                width: 80px;
+                height: 80px;
+                margin-right: 0;
+                margin-bottom: 8px;
+            }
+            .profile-text h1 {
+                font-size: 16px;
+            }
+            .profile-text .headline {
+                font-size: 14px;
             }
             .section {
                 padding: 15px;
+            }
+            .contact-info {
+                font-size: 13px;
             }
         }
     </style>
@@ -157,15 +176,19 @@
 
     <!-- Header Card -->
     <div class="card">
-        <div class="header-banner"></div>
+        <div class="header-banner">
+            <div class="profile-left">
+                <div class="photo-container">
+                    <img src="images/OIP.jpg" class="profile-photo" alt="Profile">
+                </div>
+                <div class="profile-text">
+                    <h1>陳氏薇 (Trần Thị Vi)</h1>
+                    <div class="headline">數位多媒體設計學生</div>
+                </div>
+            </div>
+        </div>
 
         <div class="profile-section">
-            <div class="photo-container">
-                <img src="images/123.jpg?v=3" class="profile-photo" alt="Profile">
-            </div>
-
-            <h1>陳氏薇 (Trần Thị Vi)</h1>
-            <div class="headline">數位多媒體設計學生</div>
             <div class="contact-info">
                 新北市 • 
                 <a href="mailto:tranthivi220909@gmail.com">tranthivi220909@gmail.com</a> • 
