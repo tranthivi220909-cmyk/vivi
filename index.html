@@ -1,95 +1,131 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>陳氏薇 (Trần Thị Vi)</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>陳氏薇 (Trần Thị Vi)</title>
+<style>
+    :root {
+        --linkedin-blue: #0a66c2;
+        --bg-gray: #f3f2ef;
+        --border-color: #e0e0e0;
+        --text-main: #1d1d1d;
+        --text-sub: rgba(0,0,0,0.6);
+    }
 
-    <style>
-        :root {
-            --linkedin-blue: #0a66c2;
-            --bg-gray: #f3f2ef;
-            --border-color: #e0e0e0;
-            --text-main: #1d1d1d;
-            --text-sub: rgba(0,0,0,0.6);
-        }
+    body {
+        font-family: "Segoe UI", system-ui;
+        margin: 0;
+        background-color: var(--bg-gray);
+    }
 
-        body {
-            font-family: "Segoe UI", system-ui;
-            margin: 0;
-            background-color: var(--bg-gray);
-        }
+    .container {
+        max-width: 1100px;
+        margin: 20px auto;
+    }
 
-        .container {
-            max-width: 1100px;
-            margin: 20px auto;
-        }
+    .card {
+        background: #fff;
+        border-radius: 10px;
+        border: 1px solid var(--border-color);
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
 
-        .card {
-            background: #fff;
-            border-radius: 10px;
-            border: 1px solid var(--border-color);
-            margin-bottom: 20px;
-            overflow: hidden;
-        }
+    /* Banner */
+    .header-banner {
+        height: 180px;
+        background-image: url("images/Lip.jpg?v=1");
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
 
-        /* ✅ Banner fix */
-        .header-banner {
-            height: 200px;
-            background-image: url("images/Lip.jpg?v=1");
-            background-size: 200px auto;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
+    /* Avatar và info */
+    .profile-section {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        position: absolute;
+        bottom: -50px; /* kéo xuống sát banner */
+        left: 20px;
+    }
 
+    .photo-container {
+        width: 100px;
+        height: 100px;
+        flex-shrink: 0;
+    }
+
+    .profile-photo {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 3px solid white;
+        object-fit: cover;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .profile-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .profile-info h1 {
+        margin: 0;
+        font-size: 22px;
+        font-weight: bold;
+        color: var(--text-main);
+    }
+
+    .headline {
+        font-size: 16px;
+        color: var(--text-sub);
+        margin: 3px 0;
+    }
+
+    .education, .languages {
+        font-size: 14px;
+        color: var(--text-sub);
+        margin: 2px 0;
+    }
+
+    .contact-info {
+        font-size: 14px;
+        color: gray;
+        margin-top: 5px;
+    }
+
+    .section {
+        padding: 70px 24px 24px 24px; /* padding-top đủ để tránh chồng banner */
+    }
+
+    .tags span {
+        border: 1px solid gray;
+        padding: 5px 12px;
+        border-radius: 15px;
+        margin-right: 5px;
+    }
+
+    @media (max-width: 600px) {
         .profile-section {
-            padding: 0 24px 24px;
+            flex-direction: column;
+            bottom: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            align-items: center;
+            text-align: center;
         }
 
         .photo-container {
-            width: 150px;
-            height: 150px;
-            margin-top: -75px;
+            width: 80px;
+            height: 80px;
         }
-
-        .profile-photo {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            border: 4px solid white;
-            object-fit: cover;
-        }
-
-        h1 {
-            margin: 10px 0 5px;
-        }
-
-        .headline {
-            font-size: 16px;
-            margin-bottom: 5px;
-        }
-
-        .contact-info {
-            font-size: 14px;
-            color: gray;
-        }
-
-        .section {
-            padding: 20px;
-        }
-
-        .tags span {
-            border: 1px solid gray;
-            padding: 5px 12px;
-            border-radius: 15px;
-            margin-right: 5px;
-        }
-    </style>
+    }
+</style>
 </head>
 
 <body>
-
 <div class="container">
 
     <div class="card">
@@ -97,13 +133,14 @@
 
         <div class="profile-section">
             <div class="photo-container">
-                <img src="images/123.jpg" class="profile-photo">
+                <img src="images/123.jpg" class="profile-photo" alt="Avatar">
             </div>
-
-            <h1>陳氏薇 (Trần Thị Vi)</h1>
-            <div class="headline">數位多媒體設計學生</div>
-            <div class="contact-info">
-                新北市 • tranthivi220909@gmail.com • 0970126327
+            <div class="profile-info">
+                <h1>陳氏薇 (Trần Thị Vi)</h1>
+                <div class="headline">數位多媒體設計學生</div>
+                <div class="education">學歷: 大學畢業</div>
+                <div class="languages">語言: 中文、英文、韓語</div>
+                <div class="contact-info">新北市 • tranthivi220909@gmail.com • 0970126327</div>
             </div>
         </div>
     </div>
@@ -123,6 +160,5 @@
     </div>
 
 </div>
-
 </body>
 </html>
