@@ -1,201 +1,213 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>陳氏薇 (Trần Thị Vi) - 專業個人主頁</title>
-<style>
-:root {
-    --linkedin-blue: #0a66c2;
-    --bg-gray: #f3f2ef;
-    --border-color: #e0e0e0;
-    --text-main: #1d1d1d;
-    --text-sub: rgba(0,0,0,0.6);
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陳氏薇 (Trần Thị Vi) - 專業個人主頁</title>
+    <style>
+        :root {
+            --linkedin-blue: #0a66c2;
+            --bg-gray: #f3f2ef;
+            --border-color: #e0e0e0;
+            --text-main: #1d1d1d;
+            --text-sub: rgba(0,0,0,0.6);
+        }
 
-body {
-    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: var(--bg-gray);
-    color: var(--text-main);
-    line-height: 1.6;
-}
+        body {
+            font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-gray);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
 
-.container {
-    max-width: 1128px;
-    margin: 20px auto;
-    padding: 0 15px;
-}
+        .container {
+            max-width: 1128px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
 
-.card {
-    background: #fff;
-    border-radius: 10px;
-    border: 1px solid var(--border-color);
-    margin-bottom: 20px;
-    overflow: hidden;
-}
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 20px;
+            position: relative; /* Giúp định vị phần profile bên trong */
+        }
 
-/* --- Banner sử dụng ảnh thật --- */
-.header-banner {
-    height: 180px;
-    background-image: url("images/Lip.jpg"); /* đổi ảnh bìa tại đây */
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
+        /* --- Header Profile Card đặc biệt --- */
+        .profile-card {
+            overflow: visible; /* Để ảnh đại diện không bị cắt mất */
+            padding-bottom: 24px;
+        }
 
-/* --- Profile Section --- */
-.profile-section {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    position: absolute;
-    bottom: -60px;
-    left: 24px;
-}
+        .header-banner {
+            height: 200px;
+            background-image: url("images/Lip.jpg"); 
+            background-size: cover;
+            background-position: center;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
 
-.photo-container {
-    width: 120px;
-    height: 120px;
-    flex-shrink: 0;
-}
+        /* Khối chứa thông tin cá nhân */
+        .profile-content {
+            padding: 0 24px;
+            margin-top: -85px; /* Đẩy ảnh lên trên banner */
+        }
 
-.profile-photo {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    border: 3px solid #fff;
-    object-fit: cover;
-    background-color: #eee;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-}
+        .photo-container {
+            width: 152px;
+            height: 152px;
+            margin-bottom: 12px;
+        }
 
-.info h1 {
-    font-size: 22px;
-    margin: 0;
-}
+        .profile-photo {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            object-fit: cover;
+            background-color: #eee;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
 
-.headline {
-    font-size: 16px;
-    color: var(--text-sub);
-    margin: 5px 0;
-}
+        .info h1 {
+            font-size: 24px;
+            margin: 0;
+            font-weight: 600;
+        }
 
-.education, .languages {
-    font-size: 14px;
-    color: var(--text-sub);
-    margin: 2px 0;
-}
+        .headline {
+            font-size: 16px;
+            color: var(--text-main);
+            margin: 4px 0;
+        }
 
-.contact-info {
-    font-size: 14px;
-    color: var(--text-sub);
-    margin-top: 5px;
-}
+        .sub-info {
+            font-size: 14px;
+            color: var(--text-sub);
+            margin: 2px 0;
+        }
 
-.contact-info a {
-    color: var(--linkedin-blue);
-    text-decoration: none;
-    font-weight: 600;
-}
+        .contact-info {
+            font-size: 14px;
+            margin-top: 8px;
+        }
 
-/* --- Sections --- */
-.section-padding {
-    padding: 80px 24px 24px 24px; 
-}
+        .contact-info a {
+            color: var(--linkedin-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
 
-.section-title {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 16px;
-}
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
 
-.item {
-    display: flex;
-    margin-bottom: 15px;
-}
+        /* --- Các section khác --- */
+        .section-padding {
+            padding: 24px; 
+        }
 
-.item-icon {
-    width: 48px;
-    height: 48px;
-    background: #f0f0f0;
-    margin-right: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: #666;
-    border-radius: 8px;
-}
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
 
-.item-content h3 {
-    font-size: 16px;
-    margin: 0;
-}
+        .item {
+            display: flex;
+            margin-bottom: 20px;
+        }
 
-.item-content p {
-    font-size: 14px;
-    margin: 2px 0;
-    color: var(--text-sub);
-}
+        .item-icon {
+            width: 48px;
+            height: 48px;
+            background: #f0f0f0;
+            margin-right: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #666;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
 
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
+        .item-content h3 {
+            font-size: 16px;
+            margin: 0;
+        }
 
-.tag {
-    background: #fff;
-    border: 1px solid #666;
-    color: #666;
-    padding: 5px 15px;
-    border-radius: 15px;
-    font-size: 14px;
-    font-weight: 600;
-}
+        .item-content p {
+            font-size: 14px;
+            margin: 2px 0;
+            color: var(--text-sub);
+        }
 
-.badge-toclf {
-    display: inline-block;
-    background-color: #e7f3ff;
-    color: #0073b1;
-    padding: 4px 12px;
-    border-radius: 4px;
-    font-weight: bold;
-    font-size: 13px;
-    margin-top: 5px;
-}
+        .badge-toclf {
+            display: inline-block;
+            background-color: #e7f3ff;
+            color: #0073b1;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 13px;
+            margin: 8px 0;
+        }
 
-/* --- Responsive --- */
-@media (max-width: 768px) {
-    .profile-section {
-        flex-direction: column;
-        bottom: -70px;
-        left: 50%;
-        transform: translateX(-50%);
-        text-align: center;
-    }
-    .photo-container { width: 100px; height: 100px; }
-    .section-padding { padding-top: 100px; }
-}
-</style>
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: #fff;
+            border: 1px solid #666;
+            color: #666;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid var(--border-color);
+            margin: 15px 0;
+        }
+
+        /* --- Responsive cho điện thoại --- */
+        @media (max-width: 768px) {
+            .header-banner { height: 120px; }
+            .profile-content { 
+                margin-top: -60px; 
+                text-align: center; 
+                display: flex; 
+                flex-direction: column; 
+                align-items: center;
+            }
+            .photo-container { width: 120px; height: 120px; }
+        }
+    </style>
 </head>
 <body>
 
 <div class="container">
-    <!-- Profile Card -->
-    <div class="card">
+    <div class="card profile-card">
         <div class="header-banner"></div>
-        <div class="profile-section">
+        <div class="profile-content">
             <div class="photo-container">
                 <img src="images/123.jpg" alt="陳氏薇" class="profile-photo">
             </div>
             <div class="info">
                 <h1>陳氏薇 (Trần Thị Vi)</h1>
                 <p class="headline">數位多媒體設計學生 | 致力於視覺傳達與數位創作</p>
-                <p class="education">學歷: 大學畢業</p>
-                <p class="languages">語言: 中文、英文、韓語 | TOCFL B1</p>
+                <p class="sub-info">黎明技術學院 (Lee-Ming Institute of Technology)</p>
+                <p class="sub-info">語言: 中文、英文、韓語 | TOCFL B1</p>
                 <p class="contact-info">
                     新北市, 台灣 • 
                     <a href="mailto:tranthivi220909@gmail.com">tranthivi220909@gmail.com</a> • 
@@ -205,9 +217,8 @@ body {
         </div>
     </div>
 
-    <!-- About Me -->
     <div class="card section-padding">
-        <h2 class="section-title">關於我</h2>
+        <h2 class="section-title">關於我 (Về tôi)</h2>
         <p>
             目前就讀於黎明技術學院數位多媒體系，對數位藝術與多媒體內容創作充滿熱情。
             具備良好的跨語言溝通能力，已取得 TOCFL B1 認證，能流暢地在中文環境中學習與協作。
@@ -215,9 +226,8 @@ body {
         </p>
     </div>
 
-    <!-- Education -->
     <div class="card section-padding">
-        <h2 class="section-title">教育背景</h2>
+        <h2 class="section-title">教育背景 (Giáo dục)</h2>
         <div class="item">
             <div class="item-icon">LIT</div>
             <div class="item-content">
@@ -228,29 +238,27 @@ body {
         </div>
     </div>
 
-    <!-- Languages -->
     <div class="card section-padding">
-        <h2 class="section-title">語言能力</h2>
+        <h2 class="section-title">語言能力 (Ngôn ngữ)</h2>
         <div class="item-content">
             <h3>中文 (Mandarin Chinese)</h3>
             <div class="badge-toclf">TOCFL B1 進階級</div>
-            <p style="margin-top: 10px;">具備在日常及職場環境中有效溝通的能力。</p>
+            <p>具備在日常及職場環境中有效溝通的能力。</p>
         </div>
-        <hr style="border:0; border-top:1px solid #eee; margin:15px 0;">
+        <hr>
         <div class="item-content">
             <h3>越南語 (Vietnamese)</h3>
-            <p>母語水平</p>
+            <p>母語水平 (Tiếng mẹ đẻ)</p>
         </div>
-        <hr style="border:0; border-top:1px solid #eee; margin:15px 0;">
+        <hr>
         <div class="item-content">
             <h3>英文 (English)</h3>
             <p>中高級交流能力</p>
         </div>
     </div>
 
-    <!-- Skills -->
     <div class="card section-padding">
-        <h2 class="section-title">專業技能</h2>
+        <h2 class="section-title">專業技能 (Kỹ năng)</h2>
         <div class="tags">
             <span class="tag">數位多媒體設計</span>
             <span class="tag">影像處理 (Photoshop)</span>
