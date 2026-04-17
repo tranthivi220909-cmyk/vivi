@@ -1,237 +1,206 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>陳氏薇 - 個人履歷</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>陳氏薇 - Portfolio</title>
 
-    <style>
-        :root {
-            --blue: #0a66c2;
-            --bg: #f3f2ef;
-            --border: #e0e0e0;
-            --text: #1d1d1d;
-            --sub: rgba(0,0,0,0.6);
-        }
+<style>
+:root {
+    --bg: #f7f6f2;
+    --card: #ffffff;
+    --text: #1a1a1a;
+    --sub: rgba(0,0,0,0.6);
+    --accent: #7c6f64;
+}
 
-        body {
-            margin: 0;
-            font-family: "Segoe UI", sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-        }
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
 
-        .container {
-            max-width: 1100px;
-            margin: 20px auto;
-            padding: 0 15px;
-        }
+/* layout */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
 
-        .card {
-            background: #fff;
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            transition: 0.2s;
-        }
+/* card style */
+.card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 22px;
+    margin-bottom: 18px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+}
 
-        .card:hover {
-            transform: translateY(-2px);
-        }
+/* profile */
+.header {
+    height: 220px;
+    background-image: url("images/lo.jpg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px 16px 0 0;
+}
 
-        /* PROFILE */
-        .header {
-            height: 200px;
-            background-image: url("images/lo.jpg");
-            background-size: cover;
-            background-position: center;
-            border-radius: 10px 10px 0 0;
-        }
+.profile {
+    text-align: center;
+    margin-top: -70px;
+}
 
-        .profile {
-            text-align: center;
-            margin-top: -80px;
-            padding: 0 20px 25px;
-        }
+.avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 4px solid white;
+    object-fit: cover;
+}
 
-        .avatar {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 4px solid white;
-            object-fit: cover;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
+h1 {
+    margin: 10px 0 5px;
+    font-weight: 600;
+}
 
-        h1 {
-            margin: 10px 0 5px;
-        }
+.sub {
+    color: var(--sub);
+    font-size: 14px;
+    margin: 4px 0;
+}
 
-        .sub {
-            color: var(--sub);
-            font-size: 14px;
-        }
+/* quote */
+.quote {
+    font-style: italic;
+    color: var(--accent);
+    margin-top: 10px;
+}
 
-        .social {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 12px;
-        }
+/* social */
+.social {
+    margin-top: 12px;
+}
 
-        .social a {
-            text-decoration: none;
-            color: var(--blue);
-            border: 1px solid var(--blue);
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 14px;
-        }
+.social a {
+    text-decoration: none;
+    margin: 0 6px;
+    color: var(--accent);
+    font-size: 14px;
+}
 
-        .social a:hover {
-            background: var(--blue);
-            color: #fff;
-        }
+/* section title */
+.title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--accent);
+}
 
-        .section {
-            padding: 24px;
-        }
+/* tags */
+.tag {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 12px;
+    background: #f0efeb;
+    margin: 3px;
+    font-size: 13px;
+}
 
-        .title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
+/* item */
+.item {
+    margin-bottom: 10px;
+}
 
-        .item {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 15px;
-        }
-
-        .icon {
-            width: 45px;
-            height: 45px;
-            background: #eee;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 6px;
-            font-weight: bold;
-        }
-
-        .tag {
-            display: inline-block;
-            padding: 5px 12px;
-            border: 1px solid #ccc;
-            border-radius: 20px;
-            margin: 4px;
-            font-size: 14px;
-        }
-
-    </style>
+</style>
 </head>
 
 <body>
 
 <div class="container">
 
-    <!-- PROFILE -->
-    <div class="card">
-        <div class="header"></div>
+<!-- PROFILE -->
+<div class="card">
+    <div class="header"></div>
 
-        <div class="profile">
-            <img src="images/123.jpg" class="avatar">
+    <div class="profile">
+        <img src="images/123.jpg" class="avatar">
 
-            <h1>陳氏薇 (Trần Thị Vi)</h1>
-            <div class="sub">數位多媒體設計學生 | TOCFL B1</div>
-            <div class="sub">黎明技術學院</div>
+        <h1>陳氏薇</h1>
 
-            <div class="social">
-                <a href="mailto:tranthivi220909@gmail.com">Email</a>
-                <a href="https://www.facebook.com/" target="_blank">Facebook</a>
-                <a href="https://www.instagram.com/" target="_blank">Instagram</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- ABOUT -->
-    <div class="card section">
-        <div class="title">關於我</div>
-        <p>
-            我目前就讀數位多媒體設計系，對視覺設計與多媒體創作充滿興趣，
-            希望未來能成為專業設計師。
+        <!-- AESTHETIC QUOTE -->
+        <p class="quote">
+            我讓你看到的生活，是經過選擇與修飾的。<br>
+            Cuộc sống mà tôi cho bạn thấy đều đã được chỉnh sửa.
         </p>
-    </div>
 
-    <!-- WORK EXPERIENCE -->
-    <div class="card section">
-        <div class="title">工作經歷</div>
-
-        <div class="item">
-            <div class="icon">G</div>
-            <div>
-                <b>GARMIN</b><br>
-                林口 (Linkou)<br>
-                2024/05 - 至今<br><br>
-
-                ・生產與包裝部門（Production & Packaging）<br>
-                ・負責產品組裝、檢查與包裝作業<br>
-                ・確保產品品質符合標準<br>
-                ・配合產線流程，提高作業效率
-            </div>
+        <div class="social">
+            <a href="mailto:tranthivi220909@gmail.com">Email</a>
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a>
         </div>
     </div>
+</div>
 
-    <!-- SKILLS -->
-    <div class="card section">
-        <div class="title">技能</div>
-
-        <span class="tag">Photoshop</span>
-        <span class="tag">Illustrator</span>
-        <span class="tag">影片剪輯</span>
-        <span class="tag">3D基礎</span>
-        <span class="tag">跨文化溝通</span>
+<!-- ABOUT -->
+<div class="card">
+    <div class="title">關於我</div>
+    <div class="item">
+        我是一名數位多媒體設計學生，喜歡用影像與設計記錄情緒與故事。
     </div>
+</div>
 
-    <!-- HOBBY (FULL TRADITIONAL CHINESE) -->
-    <div class="card section">
-        <div class="title">興趣</div>
+<!-- WORK -->
+<div class="card">
+    <div class="title">工作經歷</div>
+    <div class="item">
+        <b>GARMIN</b> ｜ 林口<br>
+        2024/05 - 至今<br><br>
 
-        <span class="tag">跳舞</span>
-        <span class="tag">舞蹈</span>
-        <span class="tag">羽毛球</span>
-        <span class="tag">踢毽子</span>
-        <span class="tag">聽播客</span>
+        ・生產與包裝部門<br>
+        ・產品組裝與品質檢查<br>
+        ・確保流程效率與標準
     </div>
+</div>
 
-    <!-- EDUCATION -->
-    <div class="card section">
-        <div class="title">學歷</div>
+<!-- SKILLS -->
+<div class="card">
+    <div class="title">技能</div>
+    <span class="tag">Photoshop</span>
+    <span class="tag">Illustrator</span>
+    <span class="tag">剪輯</span>
+    <span class="tag">3D基礎</span>
+</div>
 
-        <div class="item">
-            <div class="icon">LIT</div>
-            <div>
-                <b>黎明技術學院（LIT）</b><br>
-                數位多媒體設計學系 學士班<br>
-                2023 - 2028
-            </div>
-        </div>
+<!-- HOBBY -->
+<div class="card">
+    <div class="title">興趣</div>
+    <span class="tag">跳舞</span>
+    <span class="tag">舞蹈</span>
+    <span class="tag">羽毛球</span>
+    <span class="tag">踢毽子</span>
+    <span class="tag">聽播客</span>
+</div>
+
+<!-- EDUCATION -->
+<div class="card">
+    <div class="title">學歷</div>
+    <div class="item">
+        黎明技術學院（LIT）<br>
+        數位多媒體設計學系<br>
+        2023 - 2028
     </div>
+</div>
 
-    <!-- LANGUAGE -->
-    <div class="card section">
-        <div class="title">語言能力</div>
-
-        <p><b>中文</b> - TOCFL B1</p>
-        <p>具備日常與工作溝通能力</p>
-
-        <hr>
-
-        <p><b>越南語</b> - 母語</p>
+<!-- LANGUAGE -->
+<div class="card">
+    <div class="title">語言</div>
+    <div class="item">
+        中文（TOCFL B1）<br>
+        越南語（母語）
     </div>
+</div>
 
 </div>
 
