@@ -20,16 +20,6 @@ body {
     background: var(--bg);
     color: var(--text);
     line-height: 1.6;
-    transition: 0.3s ease;
-}
-
-/* DARK MODE */
-body.dark {
-    --bg: #121212;
-    --card: #1e1e1e;
-    --text: #ffffff;
-    --sub: rgba(255,255,255,0.6);
-    --accent: #d4b996;
 }
 
 .container {
@@ -70,17 +60,32 @@ body.dark {
     object-fit: cover;
 }
 
-/* NAME */
+/* NAME SIGNATURE */
 .name-signature {
     font-size: 34px;
     font-weight: 300;
     letter-spacing: 2px;
     margin: 10px 0 5px;
+    position: relative;
 }
 
+/* underline signature line */
+.name-signature::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: var(--accent);
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
+
+/* nickname */
 .nickname {
     font-size: 14px;
+    font-weight: 400;
     color: rgba(0,0,0,0.5);
+    margin-left: 6px;
     font-style: italic;
 }
 
@@ -88,6 +93,7 @@ body.dark {
 .quote {
     font-style: italic;
     color: var(--accent);
+    margin-top: 10px;
 }
 
 /* SOCIAL */
@@ -107,13 +113,17 @@ body.dark {
     border-radius: 999px;
     font-size: 13px;
     background: #f8f7f4;
-    transition: 0.25s ease;
+    transition: all 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .social-btn:hover {
     background: var(--accent);
     color: white;
     transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
 }
 
 /* TITLE */
@@ -122,6 +132,11 @@ body.dark {
     font-weight: 600;
     margin-bottom: 12px;
     color: var(--accent);
+}
+
+/* ITEM */
+.item {
+    font-size: 14px;
 }
 
 /* TAG */
@@ -134,10 +149,22 @@ body.dark {
     font-size: 13px;
 }
 
-/* DARK TAG */
+/* ================= DARK MODE ================= */
+body.dark {
+    --bg: #121212;
+    --card: #1e1e1e;
+    --text: #ffffff;
+    --sub: rgba(255,255,255,0.6);
+    --accent: #d4b996;
+}
+
 body.dark .tag {
     background: #2a2a2a;
     color: white;
+}
+
+body.dark .card {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 }
 
 /* THEME BUTTON */
@@ -171,12 +198,13 @@ body.dark .tag {
         <img src="images/123.jpg" class="avatar">
 
         <h1 class="name-signature">
-            陳氏薇 <span class="nickname">(Nhái / 小蛙)</span>
+            陳氏薇 
+            <span class="nickname">(Nhái / 小蛙)</span>
         </h1>
 
         <p class="quote">
             我讓你看到的生活，是經過選擇與修飾的。<br>
-            Cuộc sống mà tôi cho bạn thấy là đã được chọn lọc。
+            Cuộc sống tôi cho bạn thấy là đã được chọn lọc.
         </p>
 
         <div class="social">
@@ -190,17 +218,26 @@ body.dark .tag {
 <!-- ABOUT -->
 <div class="card">
     <div class="title">關於我</div>
-    <div>我仍在學習如何定義自己的風格。</div>
+    <div class="item">我仍在學習如何定義自己的風格。</div>
+
+    <br>
+
+    <div class="title">個性</div>
+    <div class="item">
+        偏向內向性格（Introvert）。<br>
+        安靜、慢熱，喜歡獨處與思考。
+    </div>
 </div>
 
 <!-- WORK -->
 <div class="card">
     <div class="title">工作經歷</div>
-    <div>
+    <div class="item">
         <b>GARMIN</b> ｜ 林口<br>
         2024/05 - 至今<br>
         ・生產與包裝<br>
-        ・品質檢查
+        ・產品檢查<br>
+        ・品質控制
     </div>
 </div>
 
@@ -221,28 +258,52 @@ body.dark .tag {
     <span class="tag">聽播客</span>
 </div>
 
+<!-- EDUCATION -->
+<div class="card">
+    <div class="title">學歷</div>
+    <div class="item">
+        黎明技術學院（LIT）<br>
+        數位多媒體設計學系<br>
+        2023 - 2028
+    </div>
 </div>
 
+<!-- LANGUAGE -->
+<div class="card">
+    <div class="title">語言</div>
+    <div class="item">
+        中文（TOCFL B1）<br>
+        越南語（母語）
+    </div>
+</div>
+
+</div>
+
+<!-- ================= JAVASCRIPT XỊN ================= -->
 <script>
-// ================= DARK MODE =================
+
+// DARK MODE
 const btn = document.getElementById("themeBtn");
 
 btn.addEventListener("click", () => {
     document.body.classList.toggle("dark");
+
     btn.innerText = document.body.classList.contains("dark")
         ? "☀️ Mode"
         : "🌙 Mode";
 });
 
-// ================= COPY EMAIL =================
+// COPY EMAIL
 document.querySelector('a[href^="mailto"]').addEventListener("click", function(e) {
     e.preventDefault();
+
     const email = "tranthivi220909@gmail.com";
     navigator.clipboard.writeText(email);
-    alert("Email đã được copy!");
+
+    alert("📩 Email đã được copy!");
 });
 
-// ================= SCROLL ANIMATION =================
+// SCROLL ANIMATION
 const cards = document.querySelectorAll(".card");
 
 const observer = new IntersectionObserver(entries => {
@@ -261,9 +322,10 @@ cards.forEach(card => {
     observer.observe(card);
 });
 
-// ================= TYPING EFFECT =================
+// TYPE EFFECT NAME
 const name = document.querySelector(".name-signature");
 const text = name.innerText;
+
 name.innerText = "";
 
 let i = 0;
@@ -275,6 +337,7 @@ function typeEffect() {
     }
 }
 typeEffect();
+
 </script>
 
 </body>
